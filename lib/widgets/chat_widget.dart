@@ -20,7 +20,7 @@ class ChatWidget extends StatelessWidget {
         Material(
           color: chatIndex == 0
               ? scaffoldBackgroundColor
-              : Color.fromARGB(255, 223, 0, 67),
+              : Color.fromARGB(255, 0, 0, 0),
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Row(
