@@ -55,14 +55,16 @@ class _ChatScreenState extends State<ChatScreen> {
           padding: const EdgeInsets.all(8.0),
           child: Image.asset(AssetsManager.openaiLogo),
         ),
-        title: const Text("ChatGPT"),
+        title: const Text("Talk to Poly-AI"),
         actions: [
-          IconButton(
-            onPressed: () async {
-              await Services.showModalSheet(context: context);
-            },
-            icon: const Icon(Icons.more_vert_rounded, color: Colors.white),
-          ),
+          // this is commented to hide the three dots icon for model selection
+
+          // IconButton(
+          //   onPressed: () async {
+          //     await Services.showModalSheet(context: context);
+          //   },
+          //   icon: const Icon(Icons.more_vert_rounded, color: Colors.white),
+          // ),
         ],
       ),
       body: SafeArea(
@@ -88,12 +90,12 @@ class _ChatScreenState extends State<ChatScreen> {
               ),
             ],
             const SizedBox(
-              height: 15,
+              height: 0,
             ),
             Material(
-              color: cardColor,
+              color: Color.fromRGBO(0, 0, 0, 0.5),
               child: Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(6.0),
                 child: Row(
                   children: [
                     Expanded(
@@ -107,7 +109,7 @@ class _ChatScreenState extends State<ChatScreen> {
                               chatProvider: chatProvider);
                         },
                         decoration: const InputDecoration.collapsed(
-                            hintText: "How can I help you",
+                            hintText: "Ask anything!",
                             hintStyle: TextStyle(color: Colors.grey)),
                       ),
                     ),

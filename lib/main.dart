@@ -26,12 +26,12 @@ class MyApp extends StatelessWidget {
         ),
       ],
       child: MaterialApp(
-        title: 'Flutter ChatBOT',
+        title: 'GlotBot',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-            scaffoldBackgroundColor: scaffoldBackgroundColor,
+            scaffoldBackgroundColor: Color.fromARGB(45, 12, 52, 255),
             appBarTheme: AppBarTheme(
-              color: cardColor,
+              color: Colors.black,
             )),
         home: const ChatScreen(),
       ),

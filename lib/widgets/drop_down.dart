@@ -28,7 +28,7 @@ class _ModelsDrowDownWidgetState extends State<ModelsDrowDownWidget> {
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting &&
               isFirstLoading == true) {
-                isFirstLoading= false;
+            isFirstLoading = false;
             return const FittedBox(
               child: SpinKitFadingCircle(
                 color: Colors.lightBlue,
