@@ -59,12 +59,12 @@ class _ChatScreenState extends State<ChatScreen> {
         actions: [
           // this is commented to hide the three dots icon for model selection
 
-          IconButton(
-            onPressed: () async {
-              await Services.showModalSheet(context: context);
-            },
-            icon: const Icon(Icons.more_vert_rounded, color: Colors.white),
-          ),
+          // IconButton(
+          //   onPressed: () async {
+          //     await Services.showModalSheet(context: context);
+          //   },
+          //   icon: const Icon(Icons.more_vert_rounded, color: Colors.white),
+          // ),
         ],
       ),
       body: SafeArea(

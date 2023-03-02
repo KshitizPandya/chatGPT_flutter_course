@@ -18,7 +18,7 @@ class ChatProvider with ChangeNotifier {
       {required String msg, required String chosenModelId}) async {
     chatList.addAll(await ApiService.sendMessage(
       message: msg,
-      modelId: chosenModelId,
+      modelId: "gpt-3.5-turbo",
     ));
     notifyListeners();
   }
