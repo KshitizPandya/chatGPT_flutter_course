@@ -11,7 +11,7 @@ class ApiService {
   static Future<List<ModelsModel>> getModels() async {
     try {
       var response = await http.get(
-        Uri.parse("$BASE_URL/models"),
+        Uri.parse("https://api.openai.com/v1/chat/completions"),
         headers: {'Authorization': 'Bearer $API_KEY'},
       );
 
@@ -40,7 +40,7 @@ class ApiService {
     try {
       log("modelId $modelId");
       var response = await http.post(
-        Uri.parse("$BASE_URL/completions"),
+        Uri.parse("https://api.openai.com/v1/chat/completions"),
         headers: {
           'Authorization': 'Bearer $API_KEY',
           "Content-Type": "application/json"
@@ -48,7 +48,9 @@ class ApiService {
         body: jsonEncode(
           {
             "model": modelId,
-            "prompt": message,
+            "messages": [
+              {"role": "user", "content": message}
+            ],
             "max_tokens": 300,
           },
         ),
@@ -66,7 +68,7 @@ class ApiService {
         chatList = List.generate(
           jsonResponse["choices"].length,
           (index) => ChatModel(
-            msg: jsonResponse["choices"][index]["text"],
+            msg: jsonResponse["choices"][index]["message"]["content"],
             chatIndex: 1,
           ),
         );
