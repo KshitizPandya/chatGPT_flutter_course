@@ -55,7 +55,7 @@ class _ChatScreenState extends State<ChatScreen> {
           padding: const EdgeInsets.all(8.0),
           child: Image.asset(AssetsManager.openaiLogo),
         ),
-        title: const Text("Talk to Poly-AI"),
+        title: const Text("Talk to Glot-AI"),
         actions: [
           // this is commented to hide the three dots icon for model selection
 
